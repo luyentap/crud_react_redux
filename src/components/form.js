@@ -1,3 +1,6 @@
+//không sử dụng
+//định làm kế thừa từ component này(create and edit use it)
+
 import React, {Component} from "react";
 
 export const Form = () => {

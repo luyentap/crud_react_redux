@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Table} from "./components/index2";
 import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import {createLogger} from 'redux-logger'
@@ -18,7 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const store = createStore(
-  post,
+  reducer,
   applyMiddleware(...middleware)
 )
 
@@ -33,6 +32,3 @@ class App extends Component {
 }
 
 export default App;
-
-// store.dispatch(addPost("abcde"))
-// store.dispatch(addPost("abcdef"))

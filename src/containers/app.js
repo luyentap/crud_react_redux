@@ -4,12 +4,11 @@ import AllPost from "./all_post";
 import {connect} from 'react-redux'
 import EditPost from "./edit_post";
 
- const PageCRUD = () => {
+const PageCRUD = () => {
   return (
     <>
       <CreatePost/>
       <AllPost/>
-      <EditPost id={2}/>
     </>
   );
 }

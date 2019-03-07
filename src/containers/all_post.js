@@ -9,23 +9,33 @@ import EditPost from "./edit_post";
 class AllPost extends Component {
   render() {
     const {posts} = this.props;
-    const {deleteAPost,editAPost} = this.props;
+    const {deleteAPost, editAPost} = this.props;
 
     return (
-      <div>
+      <table className="table table-bordered">
+        <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">content</th>
+          <th scope="col">action</th>
+        </tr>
+        </thead>
+        <tbody>
         {console.log(posts)}
         {/*<ListPost posts={this.props.posts}/>*/}
-        {posts.map((post) => (
-          <div key={post.id}>
-          {!post.edit ?
-            <Post key={post.id} id={post.id} text={post.text} clickDelete={() => deleteAPost(post.id)} clickEdit={()=>editAPost(post.id)}/> :
-            <EditPost key={post.id} id={post.id}/>
-          }
-          </div>
-          )
-          )}
+        {posts.map((post) =>
+          <>
+            {!(post.edit) ?
+              <Post key={post.id} id={post.id} text={post.text} clickDelete={() => deleteAPost(post.id)}
+                    clickEdit={() => editAPost(post.id)}/> :
+              <div><EditPost key={post.id} id={post.id}/></div>
+            }
+          </>
+
+        )}
         {/*{this.props.posts.map((post) => <Post key={post.id} id={post.id} content={post.text}/>)}*/}
-      </div>
+        </tbody>
+      </table>
     );
   }
 }
@@ -43,7 +53,7 @@ class AllPost extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    posts: state
+    posts: state.post
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -55,4 +65,6 @@ const mapDispatchToProps = (dispatch) => {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AllPost)
+export default connect(mapStateToProps, mapDispatchToProps)(ListPost)
+//or
+// export default connect(mapStateToProps, mapDispatchToProps)(AllPost)
