@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import {DELETE_POST} from "../constants/index2";
-import {deletePost} from "../actions/index2";
+import {DELETE_POST} from "../constants";
+import {deletePost} from "../actions";
 
 export const Post = ({id, text, clickDelete,clickEdit}) => {
   return (

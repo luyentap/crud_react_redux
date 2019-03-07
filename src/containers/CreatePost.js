@@ -1,18 +1,14 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux';
-import {addPost} from "../actions/index2";
+import {addPost} from "../actions";
 
 class CreatePost extends Component{
   onSubmitForm =(e)=>{
     e.preventDefault();
     const text = this.getMessage.value;
-    const content ={
-      id: new Date().getMilliseconds(),
-      text
-    }
-    console.log('content',content);
+    console.log('content',text);
 
-    this.props.createAPost(content);//it's same : this.props.dispatch(addPost(content));
+    this.props.createAPost(text);//it's same : this.props.dispatch(addPost(content));
     //clear the area tag
     this.getMessage.value = '';
   }

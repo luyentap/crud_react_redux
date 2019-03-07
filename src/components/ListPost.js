@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import {Post} from "./post";
-import EditPost from "../containers/edit_post";
+import {Post} from "./Post";
+import EditPost from "../containers/UpdatePost";
 
 const ListPost = ({posts,deleteAPost,editAPost}) => {
   return (

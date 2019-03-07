@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import CreatePost from "./create_post";
-import AllPost from "./all_post";
+import CreatePost from "./CreatePost";
+import AllPost from "./AllPost";
 import {connect} from 'react-redux'
-import EditPost from "./edit_post";
+import EditPost from "./UpdatePost";
 
 const PageCRUD = () => {
   return (

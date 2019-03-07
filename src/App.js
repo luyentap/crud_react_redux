@@ -4,12 +4,12 @@ import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import {createLogger} from 'redux-logger'
 import thunk from 'redux-thunk'
-import reducer from './reducers/index2'
+import reducer from './reducers'
 import {render} from 'react-dom'
-import {addPost} from "./actions/index2";
+import {addPost} from "./actions";
 import post from './reducers/post'
-import CreatePost from "./containers/create_post";
-import PageCRUD from "./containers/app";
+import CreatePost from "./containers/CreatePost";
+import PageCRUD from "./containers/App";
 
 const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') {

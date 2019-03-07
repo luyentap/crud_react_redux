@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux';
-import {addPost, editPost, updatePost} from "../actions/index2";
+import {addPost, editPost, updatePost} from "../actions";
 
-class EditPost extends Component{
+class UpdatePost extends Component{
   onSubmitForm =(e)=>{
     e.preventDefault();
     const text = this.getMessage.value;
@@ -31,4 +31,4 @@ const mapDispatchToProps = (dispatch) =>{
   }
 }
 
-export default connect(null,mapDispatchToProps)(EditPost);
+export default connect(null,mapDispatchToProps)(UpdatePost);

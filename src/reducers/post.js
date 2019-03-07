@@ -1,4 +1,4 @@
-import {ADD_POST, DELETE_POST, EDIT_POST, UPDATE_POST} from "../constants/index2";
+import {ADD_POST, DELETE_POST, EDIT_POST, UPDATE_POST} from "../constants";
 
 let initState = [];
 
@@ -8,8 +8,8 @@ export default function post(state = initState, action) {
     case ADD_POST:
       console.log("add");
       idPost++;
-      const {content} = action;
-      return [...state, action.content] //it same // return state.concat([action.content]);
+      const {text} = action;
+      return [...state, {text,id:idPost}] //it same // return state.concat([action.content]);
     case DELETE_POST:
       console.log('delete id', action.id)
       return state.filter((post) => post.id !== action.id);
@@ -23,6 +23,3 @@ export default function post(state = initState, action) {
       return state;
   }
 }
-
-
-
